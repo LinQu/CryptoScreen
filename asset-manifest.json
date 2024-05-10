@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/CryptoScreen/static/css/main.c5df565b.css",
+    "main.js": "/CryptoScreen/static/js/main.0a7318f0.js",
+    "static/media/fraction.cjs": "/CryptoScreen/static/media/fraction.7992481f3d8339b77604.cjs",
+    "static/media/submit-icon.svg": "/CryptoScreen/static/media/submit-icon.df6311ef7bd1383b2860a218cc7d01a4.svg",
+    "static/media/pagination-arrow.svg": "/CryptoScreen/static/media/pagination-arrow.e21b39464a11475d1397ae4bb52a177f.svg",
+    "static/media/logo.svg": "/CryptoScreen/static/media/logo.ba5e309abadff23fef354ee4ab537626.svg",
+    "static/media/select-icon.svg": "/CryptoScreen/static/media/select-icon.bd2e95499d73462213dd5e222d294013.svg",
+    "index.html": "/CryptoScreen/index.html",
+    "static/media/search-icon.svg": "/CryptoScreen/static/media/search-icon.523d9a8cb9ecb1aa8d160bd7e4e815a6.svg",
+    "static/media/index.cjs": "/CryptoScreen/static/media/index.cd351d7c31d0d3fccf96.cjs",
+    "main.c5df565b.css.map": "/CryptoScreen/static/css/main.c5df565b.css.map",
+    "main.0a7318f0.js.map": "/CryptoScreen/static/js/main.0a7318f0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c5df565b.css",
+    "static/js/main.0a7318f0.js"
+  ]
+}
