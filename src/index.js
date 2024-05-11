@@ -1,28 +1,49 @@
+**index.js**
+```javascript
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import './index.css';
-import {
-  HashRouter,
-  Route,
-  Switch,
-} from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import Home from './pages/Home';
 import Crypto from './pages/Crypto';
 import Trending from './pages/Trending';
 import Saved from './pages/Saved';
 import CryptoDetails from './components/CryptoDetails';
 
-ReactDOM.render(
+const cryptoDetailsRoute = {
+  path: ':coinId',
+  element: <CryptoDetails />,
+};
+
+const routes = [
+  {
+    path: '/',
+    element: <Home />,
+    children: [
+      {
+        path: '/',
+        element: <Crypto />,
+        children: [cryptoDetailsRoute],
+      },
+      {
+        path: '/trending',
+        element: <Trending />,
+        children: [cryptoDetailsRoute],
+      },
+      {
+        path: '/saved',
+        element: <Saved />,
+        children: [cryptoDetailsRoute],
+      },
+    ],
+  },
+];
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
   <React.StrictMode>
     <HashRouter>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/crypto" component={Crypto} />
-        <Route exact path="/trending" component={Trending} />
-        <Route exact path="/saved" component={Saved} />
-        <Route exact path="/crypto/:coinId" component={CryptoDetails} />
-      </Switch>
+      <Routes>{routes}</Routes>
     </HashRouter>
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );
