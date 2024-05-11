@@ -13,11 +13,11 @@ import CryptoDetails from './components/CryptoDetails';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/CryptoScreen/",
     element: <Home />,
     children:[
       {
-        path:"/",
+        path:"/CryptoScreen/",
         element: <Crypto />,
         children: [
           {
@@ -27,7 +27,7 @@ const router = createBrowserRouter([
         ]
       },
       {
-        path:"/trending",
+        path:"/CryptoScreen/trending",
         element: <Trending />,
         children: [
           {
@@ -37,7 +37,7 @@ const router = createBrowserRouter([
         ]
       },
       {
-        path:"/saved",
+        path:"/CryptoScreen/saved",
         element: <Saved />,
         children: [
           {

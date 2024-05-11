@@ -2,7 +2,7 @@
   "name": "cryptobucks",
   "version": "0.1.0",
   "private": false,
-  "homepage": "https://nex-bit.net/",
+  "homepage": "https://linqu.github.io/CryptoScreen",
   "dependencies": {
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^14.2.2",
