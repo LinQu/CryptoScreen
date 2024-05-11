@@ -1,48 +1,66 @@
-
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import { HashRouter, Route, Routes } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 import Home from './pages/Home';
 import Crypto from './pages/Crypto';
 import Trending from './pages/Trending';
 import Saved from './pages/Saved';
 import CryptoDetails from './components/CryptoDetails';
 
-const cryptoDetailsRoute = {
-  path: ':coinId',
-  element: <CryptoDetails />,
-};
-
-const routes = [
+const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <Home />,
-    children: [
+    children:[
       {
-        path: '/',
+        path:"/",
         element: <Crypto />,
-        children: [cryptoDetailsRoute],
+        children: [
+          {
+            path:":coinId",
+            element: <CryptoDetails />
+          }
+        ]
       },
       {
-        path: '/trending',
+        path:"/trending",
         element: <Trending />,
-        children: [cryptoDetailsRoute],
+        children: [
+          {
+            path:":coinId",
+            element: <CryptoDetails />
+          }
+        ]
       },
       {
-        path: '/saved',
+        path:"/saved",
         element: <Saved />,
-        children: [cryptoDetailsRoute],
-      },
-    ],
+        children: [
+          {
+            path:":coinId",
+            element: <CryptoDetails />
+          }
+        ]
+      }
+    ]
+
+
   },
-];
+]);
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <HashRouter>
-      <Routes>{routes}</Routes>
-    </HashRouter>
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+// reportWebVitals();
