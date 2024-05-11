@@ -67,7 +67,7 @@ const Chart = ({ id }) => {
     const getChartData = async (id) => {
       try {
         const data = await fetch(
-          `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=${days}&interval=daily`
+          `https://cors.io/?https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=${days}&interval=daily`
         )
           .then((res) => res.json())
           .then((json) => json);
